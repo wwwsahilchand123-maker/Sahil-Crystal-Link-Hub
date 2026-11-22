@@ -11,3 +11,15 @@
 @keyframes bubble-pop{to{opacity:1;transform:translateY(0) scale(1)}}
 @media(max-width:700px){.web-drop{right:0;top:7px;height:43vh;width:62vw}.web-thread{height:clamp(70px,14vh,120px)}.welcome-bubble{top:38%;left:-18%;max-width:150px;padding:8px 10px;font-size:10px}.web-drop .figure{opacity:.9}}
 @media(prefers-reduced-motion:reduce){.web-drop{transform:none;animation:none}.welcome-bubble{opacity:1;transform:none;animation:none}}
+
+/* Compact hanging character: the web is the suspension point */
+.web-drop{top:0;right:17%;width:clamp(145px,18vw,225px);height:auto;display:block;transform:translateY(-320px) rotate(-4deg);transform-origin:50% 0%;animation:drop-in 1.55s cubic-bezier(.2,.78,.25,1.08) .12s forwards,pendulum 4.8s ease-in-out 1.75s infinite}
+.web-thread{top:0;left:50%;height:clamp(115px,18vh,165px);width:1.5px;background:linear-gradient(#ffffffaa,#ff344e 75%,#ff344e55);box-shadow:0 0 10px #ff244c99}
+.web-thread:after{width:6px;height:6px}
+.web-drop .figure{position:relative;inset:auto;width:100%;height:auto;min-height:0;margin-top:clamp(115px,18vh,165px);display:flex;align-items:flex-start;justify-content:center;overflow:visible}
+.web-drop .figure img{display:block;width:100%;height:auto;max-height:none;max-width:100%;object-fit:contain;mix-blend-mode:multiply;filter:brightness(1.08) contrast(1.18) saturate(1.2) drop-shadow(0 8px 14px #0009)}
+.welcome-bubble{top:clamp(160px,25vh,225px);left:calc(100% - 12px);max-width:165px;font-size:11px;animation:bubble-pop .4s ease-out 1.55s forwards}
+@keyframes drop-in{0%{transform:translateY(-320px) rotate(-5deg)}72%{transform:translateY(8px) rotate(2deg)}88%{transform:translateY(-3px) rotate(-1deg)}100%{transform:translateY(0) rotate(0)}}
+@keyframes pendulum{0%,100%{transform:rotate(-1.3deg)}50%{transform:rotate(1.3deg)}}
+@media(max-width:700px){.web-drop{top:0;right:7%;width:clamp(118px,34vw,170px)}.web-thread{height:clamp(85px,13vh,115px)}.web-drop .figure{margin-top:clamp(85px,13vh,115px)}.welcome-bubble{top:clamp(120px,20vh,160px);left:calc(100% - 8px);max-width:135px;padding:8px 10px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.web-drop{transform:none;animation:none}.welcome-bubble{opacity:1;transform:none;animation:none}}
